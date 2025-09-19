@@ -1,0 +1,95 @@
+*{
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    font-family: x-large;
+}
+
+h2{
+    font-family: large;
+}
+
+body{
+     text-align: center;
+}
+.container {
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+    height: 300px;     
+}
+
+.avaliable-courses,
+.selected-courses{
+    flex: 1;
+    overflow-y: scroll;
+    border: 2px solid black;
+    font-size: small;
+
+    scrollbar-width: thin; /* firefox */
+
+}
+
+.avaliable-courses::-webkit-scrollbar,
+.selected-courses::-webkit-scrollbar {
+    width: 12px;
+}
+
+.avaliable-courses::-webkit-scrollbar-thumb,
+.selected-courses::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+.avaliable-courses::-webkit-scrollbar-track,
+.selected-courses::-webkit-scrollbar-track{
+    background-color: white;
+}
+.avaliable-courses{
+    margin-right: 170px;
+}
+
+li{
+    border: 1px solid black;
+}
+
+.dynamic-list-item {
+    list-style-type: none;
+    overflow-y: scroll;
+}
+
+.selected-courses ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.avaliable-courses li:nth-child(even) {
+    background-color: rgb(221,239,221);
+}
+
+.selected-courses li:nth-child(odd) {
+    background-color: rgb(34, 136, 232);
+}
+
+.selected {
+    background-color: cornflowerblue;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-container h2 {
+    margin-right: 10px;
+
+}
+
+.button-container button {
+    padding: 5px 10px;
+    font-size: 14px;
+}
