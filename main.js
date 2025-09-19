@@ -46,7 +46,7 @@ const Model = ((view,api) => {
         }
 
         getCourseList() {
-            return this_courseList
+            return this._courseList
         }
 
         setCourseList(arr) {
