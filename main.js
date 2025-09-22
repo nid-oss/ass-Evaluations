@@ -1,7 +1,7 @@
 const Api = (() => {
-    const url = "http://localhost:4232/courseList";
+    const url = 'http://localhost:4232/courseList';
     const course_data = fetch(url).then((res) => res.json());
-    return { course_data};
+    return  {course_data};
 })();
 
 const View = (() => {
@@ -26,7 +26,7 @@ const View = (() => {
     }
 
     const render = (element,temp) => {
-        element.innerHTML = temp;
+        element.innerHTML = temp
     }
 
     return {
@@ -50,7 +50,7 @@ const Model = ((view,api) => {
         }
 
         setCourseList(arr) {
-            this_courseList = arr;
+            this_courseList = arr
             const DOM_Element = document.querySelector(domStr.avaliable_courses)
             const temp = creatTemp(this_courseList)
             render(DOM_Element,temp)
@@ -65,8 +65,10 @@ const Model = ((view,api) => {
 const Controller = ((view,model) => {
      const {domStr,creatTemp,render} = view;
      const { course_data, State } = model
-     const init = () =>{
-        (course_data.then(data => newState.setCourseList(data)));
+
+     const newState = new State()
+     const init = () => {
+        course_data.then(data => newState.setCourseList(data));
      } 
      
      const updateTotalCredit = () => {
@@ -107,7 +109,7 @@ const Controller = ((view,model) => {
         toogleCourseSelection();
      });
       
-     const addCourse = () => {
+      const addCourse = () => {
         const selectButton = document.getElementById('selectButton');
 
         selectButton.addEventListener('click', () => {
@@ -141,8 +143,8 @@ const Controller = ((view,model) => {
     }
 
     const bootstrap = () => {
-        init();
-        addCourse();
+        init()
+        addCourse()
     }
 
     return {
@@ -151,4 +153,4 @@ const Controller = ((view,model) => {
 
 })(View,Model) 
 
-Controller.bootstrap();
+Controller.bootstrap() 
