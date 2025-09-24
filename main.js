@@ -90,7 +90,7 @@ const Controller = ((view,model) => {
      }
 
      const toogleCourseSelection = () => {
-        document.addEventListener('Click', (event) => {
+        document.addEventListener('click', (event) => {
             const target = event.target;
             if(target.classList.contains('dynamic-list-item')) {
                 target.classList.toogle('selected');
